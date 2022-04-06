@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class customAppbar extends StatelessWidget {
   AnimationController animationController;
-  Animation? colorTween, homeTween, yogaTween, iconTween, drawerTween;
+  Animation colorTween, homeTween, yogaTween, iconTween, drawerTween;
   Function()? onpressed;
   customAppbar(
       {required this.animationController,
@@ -15,33 +15,38 @@ class customAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 50,
       child: AnimatedBuilder(
           animation: animationController,
           builder: (context, child) => AppBar(
                 leading: IconButton(
                   icon: Icon(Icons.dehaze),
-                  color: drawerTween!.value,
+                  color: drawerTween.value,
                   onPressed: () {},
                 ),
-                backgroundColor: colorTween!.value,
+                backgroundColor: colorTween.value,
                 elevation: 0,
                 title: Text(
                   "Yoga",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: homeTween!.value,
+                      color: homeTween.value,
                       fontSize: 20),
                 ),
                 actions: [
                   IconButton(
-                      onPressed: () {},
+                      onPressed: onpressed,
                       icon: Icon(
                         Icons.notifications_sharp,
-                        color: iconTween!.value,
+                        color: iconTween.value,
                       )),
-                  CircleAvatar(
-                    backgroundColor: Colors.green,
-                  )
+                  SizedBox(
+                    width: 10,
+                  ),
+                  const CircleAvatar(backgroundColor: Colors.black),
+                  SizedBox(
+                    width: 10,
+                  ),
                 ],
               )),
     );

@@ -10,9 +10,9 @@ class Homepage extends StatefulWidget {
 
 class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
   late AnimationController _animationController;
-  Animation? _colorTween, _homeTween, _yogaTween, _iconTween, _drawerTween;
+  late Animation _colorTween, _homeTween, _yogaTween, _iconTween, _drawerTween;
   late AnimationController _textanimationController;
-  final _scafflodkey = GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
 
   @override
   void initState() {
@@ -37,159 +37,204 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
     bool scroll = false;
     if (scrollNotification.metrics.axis == Axis.vertical) {
       _animationController.animateTo(scrollNotification.metrics.pixels / 80);
-      _textanimationController
-          .animateTo(scrollNotification.metrics.pixels / 80);
+      _textanimationController.animateTo(scrollNotification.metrics.pixels);
       return scroll = true;
     }
     return scroll;
   }
 
+  // appBar: AppBar(
+  //   elevation: 0,
+  //   title: const Text(
+  //     "Yoga App",
+  //     style: TextStyle(color: Colors.black),
+  //   ),
+  // ),
+  // body: SafeArea(
+  //     child: SingleChildScrollView(
+  //   child: Padding(
+  //     padding: const EdgeInsets.all(20.0),
+  //     child: Column(
+  //       children: [
+  //         Row(
+  //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //           children: [
+  //             Column(
+  //               children: [
+  //                 Text("1"),
+  //                 Text("Streak"),
+  //               ],
+  //             ),
+  //             Column(
+  //               children: [
+  //                 Text("1"),
+  //                 Text("Streak"),
+  //               ],
+  //             ),
+  //             Column(
+  //               children: [
+  //                 Text("1"),
+  //                 Text("Streak"),
+  //               ],
+  //             ),
+  //           ],
+  //         ),
+  //         const SizedBox(
+  //           height: 20,
+  //         ),
+  //         const Divider(
+  //           thickness: 2,
+  //         ),
+  //         const SizedBox(
+  //           height: 20,
+  //         ),
+  //         Container(
+  //           child: Column(
+  //             crossAxisAlignment: CrossAxisAlignment.start,
+  //             children: [
+  //               Text("Yoga for all"),
+  //               const SizedBox(
+  //                 height: 20,
+  //               ),
+  //               Container(
+  //                 height: 100,
+  //                 color: Colors.amberAccent,
+  //               ),
+  //               const SizedBox(
+  //                 height: 10,
+  //               ),
+  //               Container(
+  //                 height: 100,
+  //                 color: Colors.amberAccent,
+  //               ),
+  //             ],
+  //           ),
+  //         ),
+  //         Container(
+  //           child: Column(
+  //             crossAxisAlignment: CrossAxisAlignment.start,
+  //             children: [
+  //               const SizedBox(
+  //                 height: 20,
+  //               ),
+  //               Text("Yoga for students"),
+  //               const SizedBox(
+  //                 height: 20,
+  //               ),
+  //               Container(
+  //                 height: 100,
+  //                 color: Colors.amberAccent,
+  //               ),
+  //               const SizedBox(
+  //                 height: 10,
+  //               ),
+  //               Container(
+  //                 height: 100,
+  //                 color: Colors.amberAccent,
+  //               ),
+  //             ],
+  //           ),
+  //         )
+  //       ],
+  //     ),
+  //   ),
+  // )),
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   elevation: 0,
-      //   title: const Text(
-      //     "Yoga App",
-      //     style: TextStyle(color: Colors.black),
-      //   ),
-      // ),
-      // body: SafeArea(
-      //     child: SingleChildScrollView(
-      //   child: Padding(
-      //     padding: const EdgeInsets.all(20.0),
-      //     child: Column(
-      //       children: [
-      //         Row(
-      //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //           children: [
-      //             Column(
-      //               children: [
-      //                 Text("1"),
-      //                 Text("Streak"),
-      //               ],
-      //             ),
-      //             Column(
-      //               children: [
-      //                 Text("1"),
-      //                 Text("Streak"),
-      //               ],
-      //             ),
-      //             Column(
-      //               children: [
-      //                 Text("1"),
-      //                 Text("Streak"),
-      //               ],
-      //             ),
-      //           ],
-      //         ),
-      //         const SizedBox(
-      //           height: 20,
-      //         ),
-      //         const Divider(
-      //           thickness: 2,
-      //         ),
-      //         const SizedBox(
-      //           height: 20,
-      //         ),
-      //         Container(
-      //           child: Column(
-      //             crossAxisAlignment: CrossAxisAlignment.start,
-      //             children: [
-      //               Text("Yoga for all"),
-      //               const SizedBox(
-      //                 height: 20,
-      //               ),
-      //               Container(
-      //                 height: 100,
-      //                 color: Colors.amberAccent,
-      //               ),
-      //               const SizedBox(
-      //                 height: 10,
-      //               ),
-      //               Container(
-      //                 height: 100,
-      //                 color: Colors.amberAccent,
-      //               ),
-      //             ],
-      //           ),
-      //         ),
-      //         Container(
-      //           child: Column(
-      //             crossAxisAlignment: CrossAxisAlignment.start,
-      //             children: [
-      //               const SizedBox(
-      //                 height: 20,
-      //               ),
-      //               Text("Yoga for students"),
-      //               const SizedBox(
-      //                 height: 20,
-      //               ),
-      //               Container(
-      //                 height: 100,
-      //                 color: Colors.amberAccent,
-      //               ),
-      //               const SizedBox(
-      //                 height: 10,
-      //               ),
-      //               Container(
-      //                 height: 100,
-      //                 color: Colors.amberAccent,
-      //               ),
-      //             ],
-      //           ),
-      //         )
-      //       ],
-      //     ),
-      //   ),
-      // )),
+      key: _scaffoldKey,
       drawer: Drawer(),
+      backgroundColor: Colors.white,
       body: NotificationListener(
-          onNotification: scrollListener,
-          child: Stack(
-            children: [
-              Container(
-                height: double.infinity,
-                child: Stack(
-                  children: [
-                    SingleChildScrollView(
-                      child: Stack(
-                        children: [
-                          Column(
-                            children: [
-                              Container(
-                                height: 1000,
-                                color: Colors.green,
+        onNotification: scrollListener,
+        child: Stack(
+          children: [
+            Container(
+              height: double.infinity,
+              child: Stack(
+                children: [
+                  SingleChildScrollView(
+                    child: Stack(
+                      children: [
+                        Column(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.fromLTRB(50, 80, 50, 50),
+                              decoration:
+                                  BoxDecoration(color: Colors.blueAccent),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: [
+                                  Column(
+                                    children: [
+                                      Text(
+                                        '1',
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 18),
+                                      ),
+                                      Text("Streak",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 18)),
+                                    ],
+                                  ),
+                                  Column(
+                                    children: [
+                                      Text('120',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 18)),
+                                      Text("Kcal",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 18)),
+                                    ],
+                                  ),
+                                  Column(
+                                    children: [
+                                      Text('1',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 18)),
+                                      Text("minutes",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 18)),
+                                    ],
+                                  ),
+                                ],
                               ),
-                              Container(
-                                height: 1000,
-                                color: Colors.blue,
-                              ),
-                              Container(
-                                height: 1000,
-                                color: Colors.red,
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
+                            ),
+                            Container(
+                              height: 1000,
+                              color: Colors.green,
+                            ),
+                            Container(
+                              height: 1000,
+                              color: Colors.blue,
+                            )
+                          ],
+                        )
+                      ],
                     ),
-                    customAppbar(
+                  ),
+                  customAppbar(
                       animationController: _animationController,
                       colorTween: _colorTween,
-                      homeTween: _homeTween,
-                      yogaTween: _yogaTween,
-                      iconTween: _iconTween,
                       drawerTween: _drawerTween,
+                      homeTween: _homeTween,
+                      iconTween: _iconTween,
                       onpressed: () {
-                        _scafflodkey.currentState!.openDrawer();
+                        _scaffoldKey.currentState?.openDrawer();
                       },
-                    )
-                  ],
-                ),
-              )
-            ],
-          )),
+                      yogaTween: _yogaTween)
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
