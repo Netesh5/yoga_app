@@ -167,7 +167,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                                     MainAxisAlignment.spaceAround,
                                 children: [
                                   Column(
-                                    children: [
+                                    children: const [
                                       Text(
                                         '1',
                                         style: TextStyle(
@@ -180,7 +180,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                                     ],
                                   ),
                                   Column(
-                                    children: [
+                                    children: const [
                                       Text('120',
                                           style: TextStyle(
                                               color: Colors.white,
@@ -192,7 +192,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                                     ],
                                   ),
                                   Column(
-                                    children: [
+                                    children: const [
                                       Text('1',
                                           style: TextStyle(
                                               color: Colors.white,
@@ -207,8 +207,30 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                               ),
                             ),
                             Container(
-                              height: 1000,
-                              color: Colors.green,
+                              child: Column(
+                                children: [
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  const Text("Yoga for all"),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Stack(
+                                    children: [
+                                      Container(
+                                        height: 150,
+                                        decoration: const BoxDecoration(
+                                            image: DecorationImage(
+                                          fit: BoxFit.cover,
+                                          image: NetworkImage(
+                                              'https://www.kreedon.com/wp-content/uploads/2021/03/In-Yoga.jpg'),
+                                        )),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
                             ),
                             Container(
                               height: 1000,
