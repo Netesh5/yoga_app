@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:yogaapp/screens/customAppbar.dart';
 import 'package:yogaapp/screens/homepage.dart';
+import 'package:yogaapp/screens/startup.dart';
 
 void main() {
   runApp(Myapp());
@@ -14,7 +14,7 @@ class Myapp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: "ubuntu"),
-      home: Homepage(),
+      home: startUp(),
     );
   }
 }

@@ -1,8 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:yogaapp/screens/customAppbar.dart';
-import 'package:yogaapp/screens/customDrawer.dart';
+import 'package:yogaapp/widgets/customAppbar.dart';
+import 'package:yogaapp/widgets/customDrawer.dart';
 
 class Homepage extends StatefulWidget {
   @override
