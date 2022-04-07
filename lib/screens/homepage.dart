@@ -206,36 +206,145 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                                 ],
                               ),
                             ),
-                            Container(
-                              child: Column(
-                                children: [
-                                  SizedBox(
-                                    height: 20,
-                                  ),
-                                  const Text("Yoga for all"),
-                                  SizedBox(
-                                    height: 20,
-                                  ),
-                                  Stack(
-                                    children: [
-                                      Container(
-                                        height: 150,
-                                        decoration: const BoxDecoration(
-                                            image: DecorationImage(
-                                          fit: BoxFit.cover,
-                                          image: NetworkImage(
-                                              'https://www.kreedon.com/wp-content/uploads/2021/03/In-Yoga.jpg'),
-                                        )),
-                                      ),
-                                    ],
-                                  )
-                                ],
+                            Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: Container(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      "Yoga for all",
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Stack(
+                                      children: [
+                                        Container(
+                                          height: 150,
+                                          decoration: const BoxDecoration(
+                                              image: DecorationImage(
+                                            fit: BoxFit.cover,
+                                            image: NetworkImage(
+                                                'https://img.freepik.com/free-vector/illustration-vector-graphic-sunset-yoga-silhouette-perfect-use-yoga-studio-wallpaper_315140-83.jpg'),
+                                          )),
+                                        ),
+                                        Container(
+                                          height: 150,
+                                          color: Colors.black26,
+                                        ),
+                                        Positioned(
+                                          top: 10,
+                                          left: 10,
+                                          child: Text(
+                                            "Yoga for Begineers",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 18),
+                                          ),
+                                        ),
+                                        Positioned(
+                                          top: 35,
+                                          left: 10,
+                                          child: Text(
+                                            "Last time : 7th April,2022",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 14),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    Stack(
+                                      children: [
+                                        Container(
+                                          height: 150,
+                                          decoration: const BoxDecoration(
+                                              image: DecorationImage(
+                                            fit: BoxFit.cover,
+                                            image: NetworkImage(
+                                                'https://t4.ftcdn.net/jpg/03/57/47/89/360_F_357478924_8Z8ylW4poNEZ0Mhne9YZQcZOwQlBwMXv.jpg'),
+                                          )),
+                                        ),
+                                        Container(
+                                          height: 150,
+                                          color: Colors.black26,
+                                        ),
+                                        Positioned(
+                                          top: 10,
+                                          left: 10,
+                                          child: Text(
+                                            "Yoga for Intermediate",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 18),
+                                          ),
+                                        ),
+                                        Positioned(
+                                          top: 35,
+                                          left: 10,
+                                          child: Text(
+                                            "Last time : 7th April,2022",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 14),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    Stack(
+                                      children: [
+                                        Container(
+                                          height: 150,
+                                          decoration: const BoxDecoration(
+                                              image: DecorationImage(
+                                            fit: BoxFit.cover,
+                                            image: NetworkImage(
+                                                'https://static.vecteezy.com/system/resources/thumbnails/005/178/403/small_2x/woman-doing-camel-pose-or-ustrasana-exercise-free-vector.jpg'),
+                                          )),
+                                        ),
+                                        Container(
+                                          height: 150,
+                                          color: Colors.black26,
+                                        ),
+                                        Positioned(
+                                          top: 10,
+                                          left: 10,
+                                          child: Text(
+                                            "Yoga for Advance",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 18),
+                                          ),
+                                        ),
+                                        Positioned(
+                                          top: 35,
+                                          left: 10,
+                                          child: Text(
+                                            "Last time : 7th April,2022",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 14),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
-                            Container(
-                              height: 1000,
-                              color: Colors.blue,
-                            )
                           ],
                         )
                       ],
