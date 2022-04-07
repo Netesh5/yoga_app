@@ -13,6 +13,7 @@ class Myapp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: "ubuntu"),
       home: Homepage(),
     );
   }

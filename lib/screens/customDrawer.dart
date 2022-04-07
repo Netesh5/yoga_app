@@ -8,31 +8,65 @@ class customDrawer extends StatelessWidget {
     return SafeArea(
       child: Drawer(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.network(
                 'https://images.unsplash.com/photo-1593810450979-79e8584f76b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80'),
             SizedBox(
               height: 10,
             ),
-            Divider(
-              thickness: 2,
-            ),
             ListTile(
-              title: Text("Reset Progress"),
+              title: Text(
+                "Reset Progress",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
               leading: Icon(Icons.restart_alt_outlined),
             ),
+            Divider(
+              thickness: 1,
+            ),
             ListTile(
-              title: Text("Share with Friends"),
+              title: Text(
+                "Share with Friends",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
               leading: Icon(Icons.share),
             ),
+            Divider(
+              thickness: 1,
+            ),
             ListTile(
-              title: Text("Rate us"),
+              title: Text(
+                "Rate us",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
               leading: Icon(Icons.star),
             ),
-            ListTile(title: Text("Feedback"), leading: Icon(Icons.feedback)),
+            Divider(
+              thickness: 1,
+            ),
             ListTile(
-                title: Text("Privacy Policy"),
+                title: Text(
+                  "Feedback",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                leading: Icon(Icons.feedback)),
+            Divider(
+              thickness: 1,
+            ),
+            ListTile(
+                title: Text(
+                  "Privacy Policy",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
                 leading: Icon(Icons.privacy_tip_outlined)),
+            Divider(
+              thickness: 1,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 25.0),
+              child: Text("Version : 1.0.0"),
+            )
           ],
         ),
       ),

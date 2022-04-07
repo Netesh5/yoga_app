@@ -172,12 +172,15 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                                       Text(
                                         '1',
                                         style: TextStyle(
-                                            color: Colors.white, fontSize: 18),
+                                            color: Colors.white,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold),
                                       ),
                                       Text("Streak",
                                           style: TextStyle(
                                               color: Colors.white,
-                                              fontSize: 18)),
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold)),
                                     ],
                                   ),
                                   Column(
@@ -185,11 +188,13 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                                       Text('120',
                                           style: TextStyle(
                                               color: Colors.white,
-                                              fontSize: 18)),
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold)),
                                       Text("Kcal",
                                           style: TextStyle(
                                               color: Colors.white,
-                                              fontSize: 18)),
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold)),
                                     ],
                                   ),
                                   Column(
@@ -197,11 +202,13 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                                       Text('1',
                                           style: TextStyle(
                                               color: Colors.white,
-                                              fontSize: 18)),
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold)),
                                       Text("minutes",
                                           style: TextStyle(
                                               color: Colors.white,
-                                              fontSize: 18)),
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold)),
                                     ],
                                   ),
                                 ],
