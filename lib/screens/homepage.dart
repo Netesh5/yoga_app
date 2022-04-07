@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:yogaapp/screens/customAppbar.dart';
+import 'package:yogaapp/screens/customDrawer.dart';
 
 class Homepage extends StatefulWidget {
   @override
@@ -143,7 +144,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      drawer: Drawer(),
+      drawer: customDrawer(),
       backgroundColor: Colors.white,
       body: NotificationListener(
         onNotification: scrollListener,

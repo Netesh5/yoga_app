@@ -22,7 +22,7 @@ class customAppbar extends StatelessWidget {
                 leading: IconButton(
                   icon: Icon(Icons.dehaze),
                   color: drawerTween.value,
-                  onPressed: () {},
+                  onPressed: onpressed,
                 ),
                 backgroundColor: colorTween.value,
                 elevation: 0,
