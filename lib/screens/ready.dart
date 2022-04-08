@@ -8,16 +8,24 @@ class ready extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<readyModel>(
-      create: (context) => readyModel(),
+      create: (context) => readyModel(context),
       child: Scaffold(
         body: Container(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Center(child: Text("Are you ready ?")),
+              Center(
+                  child: Text("Are you ready ?",
+                      style: TextStyle(
+                          fontSize: 30, fontWeight: FontWeight.bold))),
+              SizedBox(
+                height: 50,
+              ),
               Consumer<readyModel>(
-                  builder: (context, readyModel, child) =>
-                      Text(readyModel.countDown.toString())),
+                  builder: (context, readyModel, child) => Text(
+                      readyModel.countDown.toString(),
+                      style: TextStyle(
+                          fontSize: 30, fontWeight: FontWeight.bold))),
             ],
           ),
         ),
