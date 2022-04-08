@@ -233,14 +233,17 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                                     ),
                                     Stack(
                                       children: [
-                                        Container(
-                                          height: 150,
-                                          decoration: const BoxDecoration(
-                                              image: DecorationImage(
-                                            fit: BoxFit.cover,
-                                            image: NetworkImage(
-                                                'https://img.freepik.com/free-vector/illustration-vector-graphic-sunset-yoga-silhouette-perfect-use-yoga-studio-wallpaper_315140-83.jpg'),
-                                          )),
+                                        Hero(
+                                          tag: "yoga1",
+                                          child: Container(
+                                            height: 150,
+                                            decoration: const BoxDecoration(
+                                                image: DecorationImage(
+                                              fit: BoxFit.cover,
+                                              image: NetworkImage(
+                                                  'https://img.freepik.com/free-vector/illustration-vector-graphic-sunset-yoga-silhouette-perfect-use-yoga-studio-wallpaper_315140-83.jpg'),
+                                            )),
+                                          ),
                                         ),
                                         InkWell(
                                           onTap: () {

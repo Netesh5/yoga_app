@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yogaapp/screens/ready.dart';
 
 class startUp extends StatefulWidget {
   const startUp({Key? key}) : super(key: key);
@@ -12,7 +13,12 @@ class _startUpState extends State<startUp> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: SizedBox(
-        child: ElevatedButton(onPressed: () {}, child: Text('Start')),
+        child: ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => ready()));
+            },
+            child: Text('Start')),
         height: 40,
         width: 100,
       ),
@@ -26,9 +32,12 @@ class _startUpState extends State<startUp> {
                 'Yoga',
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              background: Image.network(
-                'https://img.freepik.com/free-vector/illustration-vector-graphic-sunset-yoga-silhouette-perfect-use-yoga-studio-wallpaper_315140-83.jpg',
-                fit: BoxFit.cover,
+              background: Hero(
+                tag: "yoga1",
+                child: Image.network(
+                  'https://img.freepik.com/free-vector/illustration-vector-graphic-sunset-yoga-silhouette-perfect-use-yoga-studio-wallpaper_315140-83.jpg',
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
