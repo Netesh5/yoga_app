@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:yogaapp/screens/startup.dart';
 import 'package:yogaapp/widgets/customAppbar.dart';
 import 'package:yogaapp/widgets/customDrawer.dart';
 
@@ -18,7 +19,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
   @override
   void initState() {
     _animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 0));
+        AnimationController(vsync: this, duration: const Duration(seconds: 0));
     _colorTween = ColorTween(begin: Colors.transparent, end: Colors.white)
         .animate(_animationController);
     _iconTween = ColorTween(begin: Colors.white, end: Colors.lightBlue)
@@ -30,7 +31,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
     _yogaTween = ColorTween(begin: Colors.white, end: Colors.black)
         .animate(_animationController);
     _textanimationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 0));
+        AnimationController(vsync: this, duration: const Duration(seconds: 0));
     super.initState();
   }
 
@@ -144,7 +145,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      drawer: customDrawer(),
+      drawer: const customDrawer(),
       backgroundColor: Colors.white,
       body: NotificationListener(
         onNotification: scrollListener,
@@ -160,9 +161,10 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                         Column(
                           children: [
                             Container(
-                              padding: EdgeInsets.fromLTRB(50, 80, 50, 50),
+                              padding:
+                                  const EdgeInsets.fromLTRB(50, 80, 50, 50),
                               decoration:
-                                  BoxDecoration(color: Colors.blueAccent),
+                                  const BoxDecoration(color: Colors.blueAccent),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceAround,
@@ -226,7 +228,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 10,
                                     ),
                                     Stack(
@@ -240,11 +242,20 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                                                 'https://img.freepik.com/free-vector/illustration-vector-graphic-sunset-yoga-silhouette-perfect-use-yoga-studio-wallpaper_315140-83.jpg'),
                                           )),
                                         ),
-                                        Container(
-                                          height: 150,
-                                          color: Colors.black26,
+                                        InkWell(
+                                          onTap: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        const startUp()));
+                                          },
+                                          child: Container(
+                                            height: 150,
+                                            color: Colors.black26,
+                                          ),
                                         ),
-                                        Positioned(
+                                        const Positioned(
                                           top: 10,
                                           left: 10,
                                           child: Text(
@@ -255,7 +266,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                                                 fontSize: 18),
                                           ),
                                         ),
-                                        Positioned(
+                                        const Positioned(
                                           top: 35,
                                           left: 10,
                                           child: Text(
@@ -267,7 +278,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                                         ),
                                       ],
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 20,
                                     ),
                                     Stack(
@@ -285,7 +296,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                                           height: 150,
                                           color: Colors.black26,
                                         ),
-                                        Positioned(
+                                        const Positioned(
                                           top: 10,
                                           left: 10,
                                           child: Text(
@@ -296,7 +307,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                                                 fontSize: 18),
                                           ),
                                         ),
-                                        Positioned(
+                                        const Positioned(
                                           top: 35,
                                           left: 10,
                                           child: Text(
@@ -308,7 +319,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                                         ),
                                       ],
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 20,
                                     ),
                                     Stack(
@@ -326,7 +337,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                                           height: 150,
                                           color: Colors.black26,
                                         ),
-                                        Positioned(
+                                        const Positioned(
                                           top: 10,
                                           left: 10,
                                           child: Text(
@@ -337,7 +348,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                                                 fontSize: 18),
                                           ),
                                         ),
-                                        Positioned(
+                                        const Positioned(
                                           top: 35,
                                           left: 10,
                                           child: Text(

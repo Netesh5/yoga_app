@@ -11,6 +11,11 @@ class _startUpState extends State<startUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: SizedBox(
+        child: ElevatedButton(onPressed: () {}, child: Text('Start')),
+        height: 40,
+        width: 100,
+      ),
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
@@ -49,7 +54,11 @@ class _startUpState extends State<startUp> {
                   },
                   itemBuilder: (BuildContext context, int index) {
                     return ListTile(
-                        title: Text("Yoga $index"),
+                        title: Text(
+                          "Yoga ${index + 1}",
+                          style: const TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        subtitle: Text((index % 2 == 0) ? "00:20" : "x20"),
                         leading: Image(
                             fit: BoxFit.cover,
                             image: NetworkImage(

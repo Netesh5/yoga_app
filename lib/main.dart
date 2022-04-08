@@ -14,7 +14,7 @@ class Myapp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: "ubuntu"),
-      home: startUp(),
+      home: Homepage(),
     );
   }
 }
