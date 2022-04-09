@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yogaapp/screens/finish_page.dart';
 import 'package:yogaapp/screens/homepage.dart';
 import 'package:yogaapp/screens/startup.dart';
 
@@ -14,7 +15,7 @@ class Myapp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: "ubuntu"),
-      home: Homepage(),
+      home: finish(),
     );
   }
 }
