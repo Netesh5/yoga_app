@@ -16,10 +16,37 @@ class breakpage extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
             image: DecorationImage(
+                fit: BoxFit.cover,
                 image: NetworkImage(
                     'https://images.unsplash.com/photo-1611228644344-245c2017de43?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHJlc3R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'))),
         child: Column(
-          children: [],
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              "Break Time",
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Consumer<breakModel>(
+                builder: (context, value, child) => Text(
+                    value.countdown.toString() + " s",
+                    style:
+                        TextStyle(fontSize: 30, fontWeight: FontWeight.bold))),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              height: 40,
+              width: 100,
+              child: ElevatedButton(
+                  onPressed: () {},
+                  child: Text("Skip",
+                      style: TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold))),
+            )
+          ],
         ),
       )),
     );
