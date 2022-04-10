@@ -52,17 +52,31 @@ class yogaDatabase {
     });
   }
 
-  Future<yoga?> insert(yoga yoga) async {
+  Future<yoga?> insert(yoga yoga, String tableName) async {
     final db = await this.database;
-    final result = await db?.insert(yogaModel.yogaTableName1, yoga.tojson());
+    final result = await db?.insert(tableName, yoga.tojson());
     return yoga.copy(id: result); // not essential
   }
 
+  Future<yogaSummary?> insertYogaSummary(yogaSummary yogasum) async {
+    final db = await this.database;
+    final result = await db?.insert(yogaModel.yogaTableName4, yogasum.tojson());
+    return yogasum.copy(id: result); // not essential
+  }
+
   //read_all_yoga_method
-  Future<List<yoga>> readallYoga() async {
+  Future<List<yogaSummary>> readallYogaSum() async {
     final db = await this.database;
     final orderBy = '${yogaModel.yogaId}ASC';
-    final result = await db!.query(yogaModel.yogaTableName1);
+    final result = await db!.query(yogaModel.yogaTableName3);
+    return result.map((json) => yogaSummary.fromjson(json)).toList();
+  }
+
+  //read_all_yoga_method
+  Future<List<yoga>> readallYoga(String tableName) async {
+    final db = await this.database;
+    final orderBy = '${yogaModel.yogaId}ASC';
+    final result = await db!.query(tableName, orderBy: orderBy);
     return result.map((json) => yoga.fromjson(json)).toList();
   }
 }
