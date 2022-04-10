@@ -14,13 +14,13 @@ class finish extends StatelessWidget {
             child: Column(children: [
               Container(
                 height: 200,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: NetworkImage(
                           'https://www.pngall.com/wp-content/uploads/4/Golden-Cup.png')),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Row(
@@ -28,12 +28,12 @@ class finish extends StatelessWidget {
                 children: [
                   Column(
                     children: [
-                      Text(
+                       Text(
                         "125",
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
-                      Text(
+                      const Text(
                         "KCal",
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
@@ -42,12 +42,12 @@ class finish extends StatelessWidget {
                   ),
                   Column(
                     children: [
-                      Text(
+                       Text(
                         "12",
-                        style: TextStyle(
+                        style:  TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
-                      Text(
+                      const Text(
                         "minutes",
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
@@ -56,7 +56,7 @@ class finish extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Row(
@@ -64,27 +64,27 @@ class finish extends StatelessWidget {
                 children: [
                   TextButton(
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         "Do it again",
                         style: TextStyle(
                             fontSize: 16, fontWeight: FontWeight.bold),
                       )),
                   TextButton(
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         "Share",
-                        style: TextStyle(
+                        style:  TextStyle(
                             fontSize: 16, fontWeight: FontWeight.bold),
                       ))
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Divider(
+              const Divider(
                 thickness: 2,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               SizedBox(
@@ -92,13 +92,13 @@ class finish extends StatelessWidget {
                 height: 40,
                 child: ElevatedButton(
                     onPressed: () {},
-                    child: Text(
+                    child: const Text(
                       "RATE OUR APP",
                       style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                           TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                     )),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Container(
