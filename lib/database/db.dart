@@ -35,6 +35,12 @@ class yogaDatabase {
         ${yogaModel.second} BOOLEAN NOT NULL,
         ${yogaModel.imageName} TEXT NOT NULL
       ),
+      CREATE TABLE YogaSummary(
+        ${yogaModel.yogaId} INTEGER PRIMARY KEY AUTOINCREMENT,
+        ${yogaModel.yogaName} TEXT NOT NULL,
+        ${yogaModel.second} BOOLEAN NOT NULL,
+        ${yogaModel.imageName} TEXT NOT NULL
+      ),
 ''');
     });
   }

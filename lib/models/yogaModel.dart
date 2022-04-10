@@ -1,4 +1,12 @@
+import 'dart:io';
+
+import 'package:sqflite/sqlite_api.dart';
+
 class yogaModel {
+  static String yogaTableName1 = "BeginnerYoga";
+  static String yogaTableName2 = "IntermediateYoga";
+  static String yogaTableName3 = "AdvanceYoga";
+  static String yogaTableName4 = "YogaSummary";
   static String yogaId = 'ID';
   static String yogaName = 'YOGANAME';
   static String second = 'SECOND';
@@ -6,6 +14,7 @@ class yogaModel {
 }
 
 class yoga {
+  Database? database;
   int? id;
   String yogaTitle;
   String imageUrl;
@@ -43,5 +52,19 @@ class yoga {
       yogaModel.imageName: imageUrl,
       yogaModel.second: second ? 1 : 0,
     };
+  }
+
+  Future<yoga?> insert(yoga yoga) async {
+    final db = await this.database;
+    final result = await db?.insert(yogaModel.yogaTableName1, yoga.tojson());
+    return yoga.copy(id: result); // not essential
+  }
+
+  //read_all_yoga_method
+  Future<List<yoga>> readallYoga() async {
+    final db = await this.database;
+    final orderBy = '${yogaModel.yogaId}ASC';
+    final result = await db!.query(yogaModel.yogaTableName1);
+    return result.map((json) => yoga.fromjson(json)).toList();
   }
 }
