@@ -1,6 +1,8 @@
+import 'dart:html';
 import 'dart:io';
 
 import 'package:sqflite/sqlite_api.dart';
+import 'package:yogaapp/screens/ready.dart';
 
 class yogaModel {
   static String yogaTableName1 = "BeginnerYoga";
@@ -11,6 +13,10 @@ class yogaModel {
   static String yogaName = 'YOGANAME';
   static String second = 'SECOND';
   static String imageName = 'IMAGENAME';
+  static String yogaWorkOutName = 'yogaWorkOutName';
+  static String backImg = 'backImg';
+  static String timeTaken = 'timeTaken';
+  static String totalNofWork = 'totalNofWork';
 }
 
 class yoga {
@@ -53,18 +59,56 @@ class yoga {
       yogaModel.second: second ? 1 : 0,
     };
   }
+}
 
-  Future<yoga?> insert(yoga yoga) async {
-    final db = await this.database;
-    final result = await db?.insert(yogaModel.yogaTableName1, yoga.tojson());
-    return yoga.copy(id: result); // not essential
+class yogaSummary {
+  Database? database;
+  int? id;
+  String yogaWorkOutName;
+  String backImg;
+  String timeTaken;
+  String totalNofWork;
+  yogaSummary({
+    this.id,
+    required this.yogaWorkOutName,
+    required this.backImg,
+    required this.timeTaken,
+    required this.totalNofWork,
+  });
+
+  yogaSummary copy({
+    int? id,
+    String? yogaWorkOutName,
+    String? backImg,
+    String? timeTaken,
+    String? totalNofWork,
+  }) {
+    return yogaSummary(
+      id: id ?? this.id,
+      yogaWorkOutName: yogaWorkOutName ?? this.yogaWorkOutName,
+      backImg: backImg ?? this.backImg,
+      timeTaken: timeTaken ?? this.timeTaken,
+      totalNofWork: totalNofWork ?? this.totalNofWork,
+    );
   }
 
-  //read_all_yoga_method
-  Future<List<yoga>> readallYoga() async {
-    final db = await this.database;
-    final orderBy = '${yogaModel.yogaId}ASC';
-    final result = await db!.query(yogaModel.yogaTableName1);
-    return result.map((json) => yoga.fromjson(json)).toList();
+  factory yogaSummary.fromjson(Map<String, Object?> json) {
+    return yogaSummary(
+      id: json[yogaModel.yogaId] as int,
+      yogaWorkOutName: json[yogaModel.yogaWorkOutName] as String,
+      backImg: json[yogaModel.backImg] as String,
+      timeTaken: json[yogaModel.timeTaken] as String,
+      totalNofWork: json[yogaModel.totalNofWork] as String,
+    );
+  }
+
+  Map<String, Object?> tojson() {
+    return {
+      yogaModel.yogaId: id,
+      yogaModel.yogaWorkOutName: yogaWorkOutName,
+      yogaModel.backImg: backImg,
+      yogaModel.timeTaken: timeTaken,
+      yogaModel.totalNofWork: totalNofWork,
+    };
   }
 }
