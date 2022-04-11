@@ -1,6 +1,9 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:sqflite/sqflite.dart';
+import 'package:yogaapp/database/db.dart';
+import 'package:yogaapp/models/yogaModel.dart';
 import 'package:yogaapp/screens/startup.dart';
 import 'package:yogaapp/widgets/customAppbar.dart';
 import 'package:yogaapp/widgets/customDrawer.dart';
@@ -15,6 +18,16 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
   late Animation _colorTween, _homeTween, _yogaTween, _iconTween, _drawerTween;
   late AnimationController _textanimationController;
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
+
+  Future makeYogaEntry(yoga yoga, String tableName) async {
+    yogaDatabase? _yogadatabase;
+    final result = await _yogadatabase!.insert(yoga, tableName);
+  }
+
+  Future makeYogaSumEntry(yogaSummary yogasum, String tableName) async {
+    yogaDatabase? _yogadatabase;
+    final result = await _yogadatabase!.insertYogaSummary(yogasum);
+  }
 
   @override
   void initState() {
@@ -33,6 +46,16 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
     _textanimationController =
         AnimationController(vsync: this, duration: const Duration(seconds: 0));
     super.initState();
+
+    makeYogaSumEntry(
+        yogaSummary(
+            yogaWorkOutName: "yoga summary",
+            backImg: "url",
+            timeTaken: "10",
+            totalNofWork: "5"),
+        yogaModel.yogaTableName4);
+    makeYogaEntry(yoga(yogaTitle: "yoga", imageUrl: "uRL", second: true),
+        yogaModel.yogaTableName1);
   }
 
   bool scrollListener(ScrollNotification scrollNotification) {
