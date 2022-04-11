@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:yogaapp/database/db.dart';
@@ -29,6 +28,15 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
     final result = await _yogadatabase!.insertYogaSummary(yogasum);
   }
 
+  bool isloading = true;
+  Future readYogaSumEntry() async {
+    List<yogaSummary>? sumEntry;
+    yogaDatabase? _yogadatabase;
+    sumEntry = await _yogadatabase?.readallYogaSum();
+    isloading = true;
+    debugPrint(sumEntry.toString());
+  }
+
   @override
   void initState() {
     _animationController =
@@ -54,8 +62,11 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
             timeTaken: "10",
             totalNofWork: "5"),
         yogaModel.yogaTableName4);
+
     makeYogaEntry(yoga(yogaTitle: "yoga", imageUrl: "uRL", second: true),
         yogaModel.yogaTableName1);
+
+    readYogaSumEntry();
   }
 
   bool scrollListener(ScrollNotification scrollNotification) {
