@@ -1,6 +1,3 @@
-import 'dart:html';
-import 'dart:io';
-
 import 'package:sqflite/sqlite_api.dart';
 import 'package:yogaapp/screens/ready.dart';
 

@@ -1,8 +1,7 @@
 import 'dart:async';
-import 'dart:js';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:yogaapp/screens/workout.dart';
 
 class readyModel with ChangeNotifier {

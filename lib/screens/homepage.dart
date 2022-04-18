@@ -20,12 +20,12 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
 
   Future makeYogaEntry(yoga yoga, String tableName) async {
     yogaDatabase? _yogadatabase;
-    final result = await _yogadatabase!.insert(yoga, tableName);
+    final result = await _yogadatabase?.insert(yoga, tableName);
   }
 
   Future makeYogaSumEntry(yogaSummary yogasum, String tableName) async {
     yogaDatabase? _yogadatabase;
-    final result = await _yogadatabase!.insertYogaSummary(yogasum);
+    final result = await _yogadatabase?.insertYogaSummary(yogasum);
   }
 
   bool isloading = true;
@@ -251,7 +251,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.all(20.0),
+                              padding: const EdgeInsets.all(10.0),
                               child: Container(
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
